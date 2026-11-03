@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classic Auto Care</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-car-side"></i>
+        <span>Classic Auto Care</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <button class="login-btn" onclick="openLogin()">
+            Login
+        </button>
+
+        <button class="signup-btn" onclick="openSignup()">
+            Sign Up
+        </button>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero" id="home">
+
+    <!-- Left Image -->
+
+    <div class="hero-image left-image">
+        <img src="assets/car-service.png" alt="Car Service">
+    </div>
+
+
+    <!-- Center Content -->
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            AUTOMOTIVE SERVICES
+        </div>
+
+        <h1>
+            Need service<br>
+            or repair<br>
+            your vehicle?
+        </h1>
+
+        <p class="hero-text">
+            We keep your car running smoothly!
+        </p>
+
+        <div class="features">
+
+            <span>
+                <i class="fa-solid fa-check"></i>
+                Free Inspection
+            </span>
+
+            <span>
+                <i class="fa-solid fa-check"></i>
+                Trusted Mechanics
+            </span>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+            <button class="book-btn">
+                <i class="fa-solid fa-calendar-check"></i>
+                Book Service
+            </button>
+
+            <button class="call-btn">
+                <i class="fa-solid fa-phone"></i>
+                Call Us
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Right Image -->
+
+    <div class="hero-image right-image">
+        <img src="assets/car-mechanic.png" alt="Auto Mechanic">
+    </div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h4>Quality Service</h4>
+            <p>Reliable vehicle care</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="icon">
+            <i class="fa-solid fa-clock"></i>
+        </div>
+
+        <div>
+            <h4>24/7 Availability</h4>
+            <p>Support when you need it</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="icon">
+            <i class="fa-solid fa-wrench"></i>
+        </div>
+
+        <div>
+            <h4>Expert Mechanics</h4>
+            <p>Professional technicians</p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div>
+            <h4>Easy Booking</h4>
+            <p>Book service online</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services-section" id="services">
+
+    <p class="section-small">WHAT WE OFFER</p>
+
+    <h2>Our Auto Care Services</h2>
+
+    <div class="service-cards">
+
+        <div class="service-card">
+            <i class="fa-solid fa-oil-can"></i>
+            <h3>Oil Change</h3>
+            <p>
+                Professional engine oil replacement
+                for better vehicle performance.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fa-solid fa-car-burst"></i>
+            <h3>Car Repair</h3>
+            <p>
+                Complete repair and maintenance
+                services for your vehicle.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Engine Service</h3>
+            <p>
+                Expert engine inspection,
+                maintenance and repair.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <i class="fa-solid fa-car"></i>
+            <h3>Full Service</h3>
+            <p>
+                Complete vehicle inspection and
+                servicing package.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-text">
+
+        <p class="section-small">ABOUT CLASSIC AUTO CARE</p>
+
+        <h2>
+            Your trusted partner
+            for vehicle care
+        </h2>
+
+        <p>
+            Classic Auto Care provides reliable and
+            professional vehicle servicing solutions.
+            Our goal is to make vehicle maintenance
+            simple, transparent and convenient.
+        </p>
+
+        <button class="learn-btn">
+            Learn More
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <p class="section-small">GET IN TOUCH</p>
+
+    <h2>Keep Your Vehicle in Top Condition</h2>
+
+    <p>
+        Schedule your next service with Classic Auto Care.
+    </p>
+
+    <button class="book-btn">
+        Book Your Service
+    </button>
+
+</section>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+        <span class="close" onclick="closeLogin()">&times;</span>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-car"></i>
+        </div>
+
+        <h2>Welcome Back</h2>
+
+        <p>Login to Classic Auto Care</p>
+
+        <form>
+
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email"
+                       placeholder="Email Address"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password"
+                       placeholder="Password"
+                       required>
+            </div>
+
+            <button class="modal-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="switch">
+            Don't have an account?
+            <a onclick="switchToSignup()">Sign Up</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal" id="signupModal">
+
+    <div class="modal-box">
+
+        <span class="close" onclick="closeSignup()">&times;</span>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <h2>Create Account</h2>
+
+        <p>Join Classic Auto Care</p>
+
+        <form>
+
+            <div class="input-box">
+                <i class="fa-solid fa-user"></i>
+                <input type="text"
+                       placeholder="Full Name"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email"
+                       placeholder="Email Address"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel"
+                       placeholder="Mobile Number"
+                       required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password"
+                       placeholder="Create Password"
+                       required>
+            </div>
+
+            <button class="modal-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="switch">
+            Already have an account?
+            <a onclick="switchToLogin()">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-logo">
+        <i class="fa-solid fa-car-side"></i>
+        Classic Auto Care
+    </div>
+
+    <p>
+        © 2026 Classic Auto Care. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

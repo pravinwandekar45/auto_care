@@ -1,0 +1,232 @@
+/* ==========================================================================
+   AutoCare – Responsive Breakpoints & Mobile Optimization
+   ========================================================================== */
+
+/* Backdrop overlay when mobile sidebar is open */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(13, 27, 42, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 990;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-backdrop.show {
+  display: block;
+}
+
+/* Table Responsive Container */
+.table-responsive-custom {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+   Desktop / Large Screens (>= 1200px)
+   ========================================================================== */
+@media (min-width: 1200px) {
+  .app-sidebar.collapsed {
+    width: 80px;
+    min-width: 80px;
+  }
+  
+  .app-sidebar.collapsed .sidebar-brand-text,
+  .app-sidebar.collapsed .sidebar-heading,
+  .app-sidebar.collapsed .sidebar-link span,
+  .app-sidebar.collapsed .menu-badge,
+  .app-sidebar.collapsed .sidebar-user-info {
+    display: none;
+  }
+  
+  .app-sidebar.collapsed .sidebar-link {
+    justify-content: center;
+    padding: 0.75rem 0;
+  }
+  
+  .app-sidebar.collapsed .sidebar-link i {
+    font-size: 1.25rem;
+  }
+  
+  .app-sidebar.collapsed + .app-main {
+    margin-left: 80px;
+  }
+}
+
+/* ==========================================================================
+   Medium / Tablet Screens (992px to 1199px)
+   ========================================================================== */
+@media (max-width: 1199px) {
+  .topbar-search {
+    width: 200px;
+  }
+  
+  .app-content {
+    padding: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Mobile / Small Tablets (< 992px)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+  
+  .app-sidebar.show {
+    transform: translateX(0);
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.35);
+  }
+  
+  .app-main {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  .app-topbar {
+    padding: 0 1rem;
+  }
+  
+  .topbar-search {
+    display: none;
+  }
+  
+  .app-content {
+    padding: 1.25rem 1rem;
+  }
+  
+  .dashboard-welcome-banner {
+    padding: 1.25rem 1.25rem;
+  }
+  
+  .welcome-title {
+    font-size: 1.25rem;
+  }
+  
+  .wizard-steps {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .wizard-steps::before {
+    display: none;
+  }
+  
+  .wizard-step {
+    flex: 0 0 calc(50% - 0.5rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-card {
+    padding: 1.1rem 1.2rem;
+  }
+  
+  .stat-card-value {
+    font-size: 1.4rem;
+  }
+  
+  .app-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .role-quick-switcher {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.3rem 0.5rem 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Phones (< 576px)
+   ========================================================================== */
+@media (max-width: 575.98px) {
+  .wizard-step {
+    flex: 0 0 100%;
+  }
+  
+  .btn-group-responsive {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .btn-group-responsive .btn {
+    width: 100%;
+  }
+  
+  .autocare-toast {
+    min-width: calc(100vw - 30px);
+    right: 15px;
+    left: 15px;
+  }
+}
+
+
+/* Additional responsive safeguards */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, svg, canvas, video, iframe { max-width: 100%; }
+.app-wrapper, .app-main, .app-content, .container-fluid { min-width: 0; }
+.app-content .row > [class*="col-"] { min-width: 0; }
+.table-responsive, .table-responsive-custom { max-width: 100%; }
+.table { white-space: normal; }
+.modal-dialog { margin-left: auto; margin-right: auto; }
+.modal-content { max-width: 100%; }
+.card-custom, .stat-card, .dashboard-welcome-banner { overflow-wrap: anywhere; }
+.topbar-page-title { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 767.98px) {
+  .app-content { padding: 1rem .75rem !important; }
+  .app-topbar { min-height: 64px; gap: .5rem; padding: .5rem .75rem !important; }
+  .topbar-left { min-width: 0; gap: .5rem; }
+  .topbar-page-title { font-size: 1rem !important; line-height: 1.3; }
+  .topbar-right { gap: .5rem; }
+  .stat-card { height: auto; }
+  .row.g-4, .row.g-3 { --bs-gutter-x: .75rem; --bs-gutter-y: .75rem; }
+  .table-responsive table { min-width: 680px; }
+  .modal-dialog { width: calc(100% - 1rem); max-width: 520px; margin: .5rem auto; }
+  .modal-body { padding: 1rem !important; }
+  .role-quick-switcher { max-width: calc(100vw - 20px); }
+  .role-quick-switcher .btn-group { flex-wrap: wrap; }
+  .app-footer { overflow-wrap: anywhere; }
+}
+@media (max-width: 420px) {
+  .welcome-title { font-size: 1.1rem !important; }
+  .btn-group-responsive, .d-flex.flex-wrap .btn { max-width: 100%; }
+  .sidebar-brand { max-width: 100%; }
+}
+
+/* Fix narrow columns: keep table content readable and allow horizontal scrolling. */
+.table-responsive-custom { display:block; max-width:100%; overflow-x:auto !important; overflow-y:hidden; }
+.table-responsive-custom .table-custom { width:max-content; min-width:100%; table-layout:auto; }
+.table-responsive-custom .table-custom th,
+.table-responsive-custom .table-custom td { white-space:nowrap; word-break:normal; overflow-wrap:normal; vertical-align:middle; }
+.table-responsive-custom .table-custom td .fw-semibold,
+.table-responsive-custom .table-custom td .fw-bold { white-space:nowrap; }
+.table-responsive-custom .table-custom td:last-child { min-width:170px; }
+@media (max-width: 767.98px) {
+  .app-content { min-width:0; }
+  .card-custom { max-width:100%; min-width:0; }
+  .table-responsive-custom .table-custom { min-width:900px; }
+  .modal-dialog { margin:.5rem; }
+  .modal-body { overflow-x:auto; }
+}
+
+/* Garage booking ledger action menus: keep long action lists scrollable. */
+.table-responsive-custom .dropdown-menu,
+.table-responsive .dropdown-menu {
+  max-height: min(60vh, 360px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 1090;
+}

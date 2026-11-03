@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Settings – AutoCare Admin</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon" style="background: linear-gradient(135deg, #2E7D32, #1565C0);">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-admin-badge">Super Admin</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Platform Overview</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="users.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>User Management</span>
+        </a>
+        <a href="vehicle-owners.html" class="sidebar-link">
+          <i class="fa-solid fa-user-tie"></i>
+          <span>Vehicle Owners</span>
+        </a>
+        <a href="garage-staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="garages.html" class="sidebar-link">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Garages Directory</span>
+          <span class="menu-badge bg-success">85</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicle Registry</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Transactions & Operations</span>
+        <a href="bookings.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Master Bookings</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service Archive</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Ledger</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders Engine</span>
+        </a>
+        <a href="reports.html" class="sidebar-link">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Reports & Analytics</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Administration</span>
+        <a href="settings.html" class="sidebar-link active">
+          <i class="fa-solid fa-sliders"></i>
+          <span>System Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Super Admin</div>
+          <div class="sidebar-user-role">Platform Executive</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Global Platform Configuration</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Super Admin</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Platform Root</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-sliders me-2 text-primary"></i>System Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="mb-4">
+          <h3 class="fw-bold text-dark mb-1">System & Gateway Settings</h3>
+          <p class="text-secondary small mb-0">Configure payment gateways, commission percentages, API connectors, and backup schedules.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <!-- Platform Economics -->
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-coins text-warning me-2"></i>Platform Fee & GST Rates</h5>
+              <div class="mb-3">
+                <label class="form-label">Platform Marketplace Commission (%)</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" value="15" min="0" max="50">
+                  <span class="input-group-text">% per booking</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Default GST Rate for Invoices (%)</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" value="18" min="0" max="30">
+                  <span class="input-group-text">% GST</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Gateway Sandbox -->
+            <div class="card-custom">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-credit-card text-primary me-2"></i>Payment Gateway (Razorpay Sandbox)</h5>
+              <div class="mb-3">
+                <label class="form-label">Razorpay Key ID</label>
+                <input type="text" class="form-control font-monospace" value="rzp_test_984A29B1Z89123">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Razorpay Key Secret</label>
+                <input type="password" class="form-control font-monospace" value="••••••••••••••••••••••••">
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="sandboxSwitch" checked>
+                <label class="form-check-label small" for="sandboxSwitch">Enable Sandbox Mock Mode</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Notification API Integrations -->
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-network-wired text-primary me-2"></i>SMS & WhatsApp API Configuration</h5>
+              <div class="mb-3">
+                <label class="form-label">Twilio / MSG91 API Key</label>
+                <input type="password" class="form-control font-monospace" value="••••••••••••••••••••••••">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">WhatsApp Business Sender ID</label>
+                <input type="text" class="form-control" value="AUTOCARE_INDIA_OFFICIAL">
+              </div>
+              <button class="btn btn-outline-primary btn-sm" onclick="AutoCareApp.Toast.show('success', 'API Ping', 'SMS & WhatsApp API endpoints healthy (Latency: 42ms).')">
+                <i class="fa-solid fa-satellite-dish me-1"></i> Test Gateway Connection
+              </button>
+            </div>
+
+            <!-- Maintenance Mode & Database Operations -->
+            <div class="card-custom border-warning-subtle">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-shield-virus text-warning me-2"></i>Maintenance & Database</h5>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Platform Maintenance Mode</h6>
+                  <small class="text-muted">Display temporary service banner to public users.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="maintSwitch">
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 pt-2 border-top">
+                <button class="btn btn-outline-secondary btn-sm" onclick="AutoCareApp.Toast.show('success', 'Backup Exported', 'Full platform JSON snapshot saved.')">
+                  <i class="fa-solid fa-database me-1"></i> Backup Database (JSON)
+                </button>
+                <button class="btn btn-outline-danger btn-sm" onclick="AutoCareData.reset(); AutoCareApp.Toast.show('success', 'Reset', 'Demo database restored to default mock data.');">
+                  <i class="fa-solid fa-rotate-left me-1"></i> Restore Initial State
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Global Platform Administration</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

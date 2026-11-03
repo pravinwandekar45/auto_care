@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Service – AutoCare</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-car-wrench"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-owner-badge">Vehicle Owner</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Main Menu</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="my-vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car-side"></i>
+          <span>My Vehicles</span>
+          <span class="menu-badge">3</span>
+        </a>
+        <a href="book-service.html" class="sidebar-link active">
+          <i class="fa-solid fa-calendar-plus"></i>
+          <span>Book Service</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service History</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders</span>
+          <span class="menu-badge bg-warning text-dark">2</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoices</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Account</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm">PK</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Pravin Kumar</div>
+          <div class="sidebar-user-role">Owner Account</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Service Booking Wizard</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm">PK</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Pravin Kumar</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Vehicle Owner</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-regular fa-user me-2 text-primary"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="mb-4">
+          <h3 class="fw-bold text-dark mb-1">Schedule Vehicle Service</h3>
+          <p class="text-secondary small mb-0">Follow the 5 simple steps to book a trusted workshop maintenance slot.</p>
+        </div>
+
+        <!-- Booking Wizard Card -->
+        <div class="card-custom" id="booking-wizard-card">
+          <!-- Wizard Step Header Indicator -->
+          <div class="wizard-steps">
+            <div class="wizard-step active" id="wizard-step-header-1">
+              <div class="wizard-step-circle">1</div>
+              <div class="wizard-step-title">Select Vehicle</div>
+            </div>
+            <div class="wizard-step" id="wizard-step-header-2">
+              <div class="wizard-step-circle">2</div>
+              <div class="wizard-step-title">Select Service</div>
+            </div>
+            <div class="wizard-step" id="wizard-step-header-3">
+              <div class="wizard-step-circle">3</div>
+              <div class="wizard-step-title">Select Garage</div>
+            </div>
+            <div class="wizard-step" id="wizard-step-header-4">
+              <div class="wizard-step-circle">4</div>
+              <div class="wizard-step-title">Date & Slot</div>
+            </div>
+            <div class="wizard-step" id="wizard-step-header-5">
+              <div class="wizard-step-circle">5</div>
+              <div class="wizard-step-title">Summary</div>
+            </div>
+          </div>
+
+          <!-- Step 1 Content: Vehicle Selection -->
+          <div id="step-content-1">
+            <h5 class="fw-bold text-dark mb-3">Step 1 — Choose your vehicle</h5>
+            <div class="row" id="wizard-vehicles-container">
+              <!-- Rendered by owner.js -->
+            </div>
+          </div>
+
+          <!-- Step 2 Content: Service Selection -->
+          <div id="step-content-2" style="display: none;">
+            <h5 class="fw-bold text-dark mb-3">Step 2 — Select service package</h5>
+            <div class="row" id="wizard-services-container">
+              <!-- Rendered by owner.js -->
+            </div>
+          </div>
+
+          <!-- Step 3 Content: Garage Selection -->
+          <div id="step-content-3" style="display: none;">
+            <h5 class="fw-bold text-dark mb-3">Step 3 — Select authorized garage</h5>
+            <div class="row" id="wizard-garages-container">
+              <!-- Rendered by owner.js -->
+            </div>
+          </div>
+
+          <!-- Step 4 Content: Date & Time -->
+          <div id="step-content-4" style="display: none;">
+            <h5 class="fw-bold text-dark mb-3">Step 4 — Select preferred date & time slot</h5>
+            <div class="row g-4">
+              <div class="col-md-5">
+                <label class="form-label">Service Date *</label>
+                <input type="date" class="form-control" id="bookingDate">
+                <div class="alert alert-info border-0 mt-3 p-3 small">
+                  <i class="fa-solid fa-circle-info me-1"></i> Workshops operate Monday to Saturday from 08:30 AM to 07:00 PM.
+                </div>
+              </div>
+
+              <div class="col-md-7">
+                <label class="form-label">Available Time Slots *</label>
+                <div class="row g-2">
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn disabled" data-time="09:00 AM">09:00 AM</div>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn selected" data-time="10:00 AM">10:00 AM</div>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn" data-time="11:30 AM">11:30 AM</div>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn" data-time="02:00 PM">02:00 PM</div>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn" data-time="03:30 PM">03:30 PM</div>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <div class="time-slot-btn" data-time="05:00 PM">05:00 PM</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="form-label" for="bookingNotes">Special Instructions or Notes (Optional)</label>
+                  <textarea class="form-control" id="bookingNotes" rows="2" placeholder="Mention any specific issues, squeaks, or fluid requests..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 Content: Summary -->
+          <div id="step-content-5" style="display: none;">
+            <h5 class="fw-bold text-dark mb-3">Step 5 — Review booking summary & estimate</h5>
+            <div class="row g-4">
+              <div class="col-lg-7">
+                <div class="bg-light rounded-4 p-4 border">
+                  <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">Appointment Details</h6>
+                  <div class="row g-3 small">
+                    <div class="col-sm-6">
+                      <span class="text-secondary d-block">Vehicle:</span>
+                      <strong class="text-dark fs-6" id="summary-vehicle">Hyundai Creta</strong>
+                    </div>
+                    <div class="col-sm-6">
+                      <span class="text-secondary d-block">Service Package:</span>
+                      <strong class="text-dark fs-6" id="summary-service">General Service</strong>
+                    </div>
+                    <div class="col-sm-6">
+                      <span class="text-secondary d-block">Workshop:</span>
+                      <strong class="text-primary fs-6" id="summary-garage">SpeedPro AutoCare</strong>
+                    </div>
+                    <div class="col-sm-6">
+                      <span class="text-secondary d-block">Scheduled Slot:</span>
+                      <strong class="text-dark fs-6" id="summary-datetime">15 Sep 2026 at 10:00 AM</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="card-custom border-primary border-2 bg-white">
+                  <h6 class="fw-bold text-dark border-bottom pb-2 mb-3">Estimated Cost</h6>
+                  <div class="d-flex justify-content-between mb-2 small">
+                    <span class="text-secondary">Package Base Price:</span>
+                    <span class="fw-semibold text-dark" id="summary-subtotal">₹2,499</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2 small">
+                    <span class="text-secondary">Estimated GST (18%):</span>
+                    <span class="text-dark" id="summary-tax">₹450</span>
+                  </div>
+                  <div class="d-flex justify-content-between pt-2 border-top mt-2 fs-5">
+                    <span class="fw-bold text-dark">Estimated Total:</span>
+                    <span class="fw-bold text-primary" id="summary-total">₹2,949</span>
+                  </div>
+                  <small class="text-muted d-block mt-2" style="font-size: 0.75rem;">*Final cost may adjust if additional parts are approved during physical inspection.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wizard Action Buttons -->
+          <div class="d-flex justify-content-between align-items-center pt-4 mt-4 border-top">
+            <button type="button" class="btn btn-secondary-custom" id="wizard-prev-btn" style="display: none;">
+              <i class="fa-solid fa-arrow-left me-1"></i> Previous Step
+            </button>
+            <div class="ms-auto d-flex gap-2">
+              <button type="button" class="btn btn-primary" id="wizard-next-btn">
+                Next Step <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+              <button type="button" class="btn btn-success fw-bold" id="wizard-confirm-btn" style="display: none;">
+                <i class="fa-solid fa-circle-check me-1"></i> Confirm Booking
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Confirmation Card (Shown after booking) -->
+        <div class="card-custom text-center py-5" id="booking-success-card" style="display: none;">
+          <div class="empty-state-icon bg-success-subtle text-success mx-auto mb-3" style="width: 80px; height: 80px; font-size: 2.2rem;">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-2">Service Booking Confirmed!</h3>
+          <p class="text-secondary mx-auto mb-4" style="max-width: 480px;">
+            Your appointment has been registered with the workshop. A confirmation SMS and email have been sent to your registered contact.
+          </p>
+
+          <div class="bg-light rounded-4 p-4 d-inline-block text-start mb-4 border" style="min-width: 340px; max-width: 480px;">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Booking Reference:</span>
+              <strong class="text-primary font-monospace" id="confirmed-booking-id">BK-9842</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Vehicle:</span>
+              <strong class="text-dark" id="confirmed-vehicle">Hyundai Creta (MH 02 CD 4589)</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Workshop:</span>
+              <span class="text-dark" id="confirmed-garage">SpeedPro AutoCare</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Date & Slot:</span>
+              <span class="text-dark" id="confirmed-datetime">15 Sep 2026 at 10:00 AM</span>
+            </div>
+            <div class="d-flex justify-content-between pt-2 border-top">
+              <span class="fw-bold text-dark">Estimated Cost:</span>
+              <strong class="text-success fs-6" id="confirmed-cost">₹2,499</strong>
+            </div>
+          </div>
+
+          <div>
+            <a href="dashboard.html" class="btn btn-primary me-2">
+              <i class="fa-solid fa-gauge-high me-1"></i> Return to Dashboard
+            </a>
+            <a href="service-history.html" class="btn btn-secondary-custom">
+              <i class="fa-solid fa-clock-rotate-left me-1"></i> View Booking in History
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Booking Engine</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/session-profile.js"></script>
+  <script src="../assets/js/owner.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AutoCareOwner.initBookingWizard();
+    });
+  </script>
+</body>
+</html>

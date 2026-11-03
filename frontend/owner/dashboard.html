@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Owner Dashboard – Classic Auto Care</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-car-wrench"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-owner-badge">Vehicle Owner</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Main Menu</span>
+        <a href="dashboard.html" class="sidebar-link active">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="my-vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car-side"></i>
+          <span>My Vehicles</span>
+          <span class="menu-badge">3</span>
+        </a>
+        <a href="book-service.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-plus"></i>
+          <span>Book Service</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service History</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders</span>
+          <span class="menu-badge bg-warning text-dark">2</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoices</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Account</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm">PK</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Pravin Kumar</div>
+          <div class="sidebar-user-role">Owner Account</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Vehicle Owner Dashboard</h1>
+        </div>
+
+        <div class="topbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="form-control" placeholder="Search vehicles, services...">
+        </div>
+
+        <div class="topbar-right">
+          <div class="dropdown">
+            <div class="topbar-action-btn" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-bell"></i>
+              <span class="notification-badge" id="notification-badge">2</span>
+            </div>
+            <div class="dropdown-menu dropdown-menu-end shadow-lg p-0" id="topbar-notifications" style="width: 320px; border-radius: 12px;"></div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm">PK</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Pravin Kumar</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Vehicle Owner</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-regular fa-user me-2 text-primary"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <!-- Dashboard Welcome Banner -->
+        <div class="dashboard-welcome-banner">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="welcome-title">Good Morning, Pravin 👋</h2>
+              <p class="welcome-subtitle">Keep your vehicle healthy and never miss your next service.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <a href="book-service.html" class="btn btn-light text-primary fw-bold">
+                <i class="fa-solid fa-calendar-plus me-1"></i> Book New Service
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Due Reminder Alert Box -->
+        <div class="alert alert-warning border-0 shadow-sm d-flex align-items-center justify-content-between p-3 mb-4 rounded-4" role="alert">
+          <div class="d-flex align-items-center gap-3">
+            <div class="stat-card-icon icon-yellow" style="width: 44px; height: 44px;">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+              <strong class="text-dark">Service Reminder:</strong>
+              <span class="text-dark ms-1">Your <strong>Hyundai Creta (MH 02 CD 4589)</strong> is due for service in 12 days.</span>
+            </div>
+          </div>
+          <a href="book-service.html" class="btn btn-warning btn-sm fw-semibold text-dark">
+            <i class="fa-solid fa-wrench me-1"></i> Book Service
+          </a>
+        </div>
+
+        <!-- Metric Stat Cards Grid -->
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Total Vehicles</span>
+                <span class="stat-card-value" id="stat-total-vehicles">3 Vehicles</span>
+                <span class="stat-card-trend trend-neutral"><i class="fa-solid fa-car"></i> Registered in Vault</span>
+              </div>
+              <div class="stat-card-icon icon-blue">
+                <i class="fa-solid fa-car-side"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Upcoming Service</span>
+                <span class="stat-card-value" id="stat-upcoming-service">15 Sep 2026</span>
+                <span class="stat-card-trend trend-up"><i class="fa-solid fa-calendar-check"></i> Confirmed Slot</span>
+              </div>
+              <div class="stat-card-icon icon-green">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Active Bookings</span>
+                <span class="stat-card-value" id="stat-active-bookings">2</span>
+                <span class="stat-card-trend trend-up"><i class="fa-solid fa-spinner fa-spin"></i> In Pipeline</span>
+              </div>
+              <div class="stat-card-icon icon-yellow">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Pending Payment</span>
+                <span class="stat-card-value" id="stat-pending-payment">₹2,450</span>
+                <span class="stat-card-trend trend-down"><i class="fa-solid fa-circle-exclamation"></i> 1 Invoice Pending</span>
+              </div>
+              <div class="stat-card-icon icon-red">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Service Card -->
+        <div class="card-custom mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-dark mb-0">Upcoming Scheduled Service</h5>
+            <a href="book-service.html" class="small text-primary fw-semibold text-decoration-none">Manage Bookings &rarr;</a>
+          </div>
+          <div id="upcoming-service-card">
+            <!-- Rendered by owner.js -->
+          </div>
+        </div>
+
+        <!-- Analytics & Expenses Chart -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-8">
+            <div class="card-custom h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h5 class="fw-bold text-dark mb-0">Monthly Service Expenses</h5>
+                  <small class="text-secondary">Vehicle maintenance & parts expenditure across 2026</small>
+                </div>
+                <span class="badge bg-light text-primary border">2026 Year-to-Date</span>
+              </div>
+              <div style="height: 280px; position: relative;">
+                <canvas id="expensesChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card-custom h-100">
+              <h5 class="fw-bold text-dark mb-3">Quick Actions</h5>
+              <div class="d-flex flex-column gap-2">
+                <a href="book-service.html" class="btn btn-light text-start p-3 border d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-calendar-plus text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Book Service</div>
+                      <small class="text-secondary">Schedule at certified workshop</small>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-muted small"></i>
+                </a>
+
+                <a href="my-vehicles.html" class="btn btn-light text-start p-3 border d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-car-side text-success fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">+ Add New Vehicle</div>
+                      <small class="text-secondary">Register car or motorcycle</small>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-muted small"></i>
+                </a>
+
+                <a href="invoices.html" class="btn btn-light text-start p-3 border d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-credit-card text-warning fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Pay Pending Invoice</div>
+                      <small class="text-secondary">Instant UPI & Card checkout</small>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-muted small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Invoices generated by the garage for this owner -->
+        <div class="card-custom mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">My Invoices</h5>
+              <small class="text-secondary">Invoices addressed to your registered account</small>
+            </div>
+            <a href="invoices.html" class="btn btn-secondary-custom btn-sm">View All Invoices</a>
+          </div>
+          <div class="table-responsive-custom">
+            <table class="table-custom">
+              <thead><tr><th>Invoice</th><th>Vehicle</th><th>Garage</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="owner-dashboard-invoices-tbody">
+                <tr><td colspan="7" class="text-center text-muted py-3">Loading invoices...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Recent Service History Table -->
+        <div class="card-custom">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Recent Service History</h5>
+              <small class="text-secondary">Audit trail of completed and active vehicle services</small>
+            </div>
+            <a href="service-history.html" class="btn btn-secondary-custom btn-sm">
+              View All History
+            </a>
+          </div>
+
+          <div class="table-responsive-custom">
+            <table class="table-custom">
+              <thead>
+                <tr>
+                  <th>Vehicle</th>
+                  <th>Service</th>
+                  <th>Garage</th>
+                  <th>Date</th>
+                  <th>Cost</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="recent-history-tbody">
+                <!-- Rendered dynamically by owner.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Vehicle Owner Portal • Active Session</div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Detailed Service Modal -->
+  <div class="modal fade" id="serviceDetailModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header border-bottom bg-light">
+          <h6 class="modal-title fw-bold text-dark"><i class="fa-solid fa-file-waveform text-primary me-2"></i>Service Inspection Details</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="d-flex justify-content-between mb-3 border-bottom pb-2">
+            <span class="text-muted">Booking Reference:</span>
+            <span class="fw-bold font-monospace text-primary" id="modal-service-id">BK-1028</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Vehicle:</span>
+            <span class="fw-semibold text-dark" id="modal-vehicle-name">Hyundai Creta</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Service Type:</span>
+            <span class="fw-semibold text-dark" id="modal-service-name">General Service</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Workshop:</span>
+            <span class="text-dark" id="modal-garage-name">SpeedPro AutoCare</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Service Date:</span>
+            <span class="text-dark" id="modal-service-date">15 Sep 2026</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Technician:</span>
+            <span class="text-dark" id="modal-technician">Ramesh Sawant</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Current Status:</span>
+            <span id="modal-service-status"><span class="badge-status badge-confirmed">Confirmed</span></span>
+          </div>
+          <div class="d-flex justify-content-between pt-2 border-top mt-3 fs-5">
+            <span class="fw-bold text-dark">Total Amount:</span>
+            <span class="fw-bold text-primary" id="modal-total-cost">₹2,499</span>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light">
+          <button type="button" class="btn btn-secondary-custom btn-sm" data-bs-dismiss="modal">Close</button>
+          <a href="invoices.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-invoice me-1"></i>View Invoice</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/session-profile.js"></script>
+  <script src="../assets/js/owner.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AutoCareOwner.initDashboard();
+    });
+  </script>
+</body>
+</html>

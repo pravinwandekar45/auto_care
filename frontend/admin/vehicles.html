@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Vehicle Registry – AutoCare Admin</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon" style="background: linear-gradient(135deg, #2E7D32, #1565C0);">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-admin-badge">Super Admin</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Platform Overview</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="users.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>User Management</span>
+        </a>
+        <a href="vehicle-owners.html" class="sidebar-link">
+          <i class="fa-solid fa-user-tie"></i>
+          <span>Vehicle Owners</span>
+        </a>
+        <a href="garage-staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="garages.html" class="sidebar-link">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Garages Directory</span>
+          <span class="menu-badge bg-success">85</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link active">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicle Registry</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Transactions & Operations</span>
+        <a href="bookings.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Master Bookings</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service Archive</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Ledger</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders Engine</span>
+        </a>
+        <a href="reports.html" class="sidebar-link">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Reports & Analytics</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Administration</span>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-sliders"></i>
+          <span>System Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Super Admin</div>
+          <div class="sidebar-user-role">Platform Executive</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Platform Master Vehicle Registry</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Super Admin</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Platform Root</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-sliders me-2 text-primary"></i>System Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h3 class="fw-bold text-dark mb-1">Master Vehicle Database (1,840 Total)</h3>
+            <p class="text-secondary small mb-0">Platform-wide automotive fleet registry tracking active maintenance compliance.</p>
+          </div>
+          <button class="btn btn-outline-primary btn-sm" onclick="AutoCareApp.exportTableToCSV('admin-vehicles-table', 'Master_Vehicle_Registry.csv')">
+            <i class="fa-solid fa-download me-1"></i> Export Master Registry CSV
+          </button>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="card-custom mb-4 p-3">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-4">
+              <label class="form-label small mb-1">Filter by Fuel Type</label>
+              <select class="form-select form-select-sm" id="admin-veh-fuel">
+                <option value="all">All Fuel Types</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric (EV)</option>
+              </select>
+            </div>
+            <div class="col-md-8">
+              <label class="form-label small mb-1">Search Plate, Vehicle, or Owner Name</label>
+              <input type="text" class="form-control form-control-sm" id="admin-veh-search" placeholder="Type registration number, model, or customer name...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Vehicles Table -->
+        <div class="card-custom">
+          <div class="table-responsive-custom">
+            <table class="table-custom" id="admin-vehicles-table">
+              <thead>
+                <tr>
+                  <th>Vehicle</th>
+                  <th>Registered Owner</th>
+                  <th>Registration No.</th>
+                  <th>Brand & Model</th>
+                  <th>Fuel & Category</th>
+                  <th>Odometer</th>
+                  <th>Last Service</th>
+                  <th>Compliance Status</th>
+                </tr>
+              </thead>
+              <tbody id="admin-vehicles-tbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Master Vehicle Vault</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tbody = document.getElementById('admin-vehicles-tbody');
+      const vehicles = AutoCareData.getVehicles();
+
+      function render(list) {
+        tbody.innerHTML = list.map(v => `
+          <tr>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <div class="stat-card-icon icon-blue" style="width:34px; height:34px; font-size:0.9rem;">
+                  <i class="fa-solid ${v.imageIcon || 'fa-car'}"></i>
+                </div>
+                <div>
+                  <div class="fw-bold text-dark">${v.name}</div>
+                  <small class="text-muted">${v.year} Model</small>
+                </div>
+              </div>
+            </td>
+            <td><div class="text-dark fw-medium">${v.ownerName || 'Pravin Kumar'}</div></td>
+            <td><strong class="font-monospace text-primary">${v.regNumber}</strong></td>
+            <td><small class="text-secondary">${v.brand} ${v.model}</small></td>
+            <td><span class="badge bg-light text-dark border">${v.fuel} • ${v.type}</span></td>
+            <td class="fw-semibold text-dark">${v.mileage.toLocaleString()} km</td>
+            <td><small class="text-muted">${AutoCareApp.formatDate(v.lastServiceDate)}</small></td>
+            <td><span class="badge-status badge-${v.serviceStatus.toLowerCase().replace(' ', '-')}">${v.serviceStatus}</span></td>
+          </tr>
+        `).join('');
+      }
+
+      render(vehicles);
+
+      document.getElementById('admin-veh-search').addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        const filtered = vehicles.filter(v => 
+          v.name.toLowerCase().includes(q) || 
+          v.regNumber.toLowerCase().includes(q) || 
+          (v.ownerName && v.ownerName.toLowerCase().includes(q))
+        );
+        render(filtered);
+      });
+
+      document.getElementById('admin-veh-fuel').addEventListener('change', (e) => {
+        const fuel = e.target.value;
+        const filtered = fuel === 'all' ? vehicles : vehicles.filter(v => v.fuel === fuel);
+        render(filtered);
+      });
+    });
+  </script>
+</body>
+</html>

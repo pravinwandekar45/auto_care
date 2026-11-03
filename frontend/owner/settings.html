@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings – AutoCare</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-car-wrench"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-owner-badge">Vehicle Owner</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Main Menu</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="my-vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car-side"></i>
+          <span>My Vehicles</span>
+          <span class="menu-badge">3</span>
+        </a>
+        <a href="book-service.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-plus"></i>
+          <span>Book Service</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service History</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders</span>
+          <span class="menu-badge bg-warning text-dark">2</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoices</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Account</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link active">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm">PK</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Pravin Kumar</div>
+          <div class="sidebar-user-role">Owner Account</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Portal Settings & Preferences</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm">PK</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Pravin Kumar</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Vehicle Owner</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-regular fa-user me-2 text-primary"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="mb-4">
+          <h3 class="fw-bold text-dark mb-1">Preferences & Configuration</h3>
+          <p class="text-secondary small mb-0">Customize communication alerts, notification frequency, and regional formatting.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <!-- Notification Settings -->
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-regular fa-bell text-primary me-2"></i>Notification Channels</h5>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Email Notifications</h6>
+                  <small class="text-muted">Receive booking confirmations, invoice receipts, and periodic reports.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="emailNotifSwitch" checked>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">SMS Alerts & WhatsApp</h6>
+                  <small class="text-muted">Get real-time job status updates when your car is inside the workshop.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="smsNotifSwitch" checked>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Service Due Reminders</h6>
+                  <small class="text-muted">Proactive alerts 15 days before PUC, Insurance, or Service milestones.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="remindersSwitch" checked>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regional Preferences -->
+            <div class="card-custom">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-globe text-primary me-2"></i>Regional & Localization</h5>
+              <div class="mb-3">
+                <label class="form-label">Currency Display</label>
+                <select class="form-select">
+                  <option value="INR" selected>Indian Rupee (₹ - INR)</option>
+                  <option value="USD">US Dollar ($ - USD)</option>
+                  <option value="EUR">Euro (€ - EUR)</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Date Format</label>
+                <select class="form-select">
+                  <option value="DD-MMM-YYYY" selected>15 Sep 2026 (DD MMM YYYY)</option>
+                  <option value="YYYY-MM-DD">2026-09-15 (ISO)</option>
+                  <option value="MM/DD/YYYY">09/15/2026 (US)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Data & Account Actions -->
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-database text-primary me-2"></i>Mock Data Controls</h5>
+              <p class="small text-secondary mb-3">
+                AutoCare automatically persists your created vehicles, scheduled bookings, and invoices in your browser's LocalStorage.
+              </p>
+              <button type="button" class="btn btn-outline-warning btn-sm mb-2" id="reset-data-btn">
+                <i class="fa-solid fa-rotate-left me-1"></i> Reset Demo Mock Data to Defaults
+              </button>
+              <small class="d-block text-muted">Restores all original vehicles, bookings, and demo invoices.</small>
+            </div>
+
+            <div class="card-custom border-danger-subtle">
+              <h5 class="fw-bold text-danger border-bottom pb-3 mb-3"><i class="fa-solid fa-triangle-exclamation me-2"></i>Danger Zone</h5>
+              <p class="small text-secondary mb-3">Permanently deactivate your vehicle owner profile and wipe associated service records.</p>
+              <button class="btn btn-outline-danger btn-sm" onclick="alert('Account deactivation requested. Please contact support.')">
+                <i class="fa-regular fa-trash-can me-1"></i> Deactivate Account
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Configuration Center</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/session-profile.js"></script>
+  <script>
+    document.getElementById('reset-data-btn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all mock data to factory defaults?')) {
+        AutoCareData.reset();
+        AutoCareApp.Toast.show('success', 'Reset Complete', 'Demo database restored to default state.');
+      }
+    });
+  </script>
+</body>
+</html>

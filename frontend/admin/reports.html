@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform Reports & BI – AutoCare Admin</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon" style="background: linear-gradient(135deg, #2E7D32, #1565C0);">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-admin-badge">Super Admin</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Platform Overview</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="users.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>User Management</span>
+        </a>
+        <a href="vehicle-owners.html" class="sidebar-link">
+          <i class="fa-solid fa-user-tie"></i>
+          <span>Vehicle Owners</span>
+        </a>
+        <a href="garage-staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="garages.html" class="sidebar-link">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Garages Directory</span>
+          <span class="menu-badge bg-success">85</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicle Registry</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Transactions & Operations</span>
+        <a href="bookings.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Master Bookings</span>
+        </a>
+        <a href="service-history.html" class="sidebar-link">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Service Archive</span>
+        </a>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Ledger</span>
+        </a>
+        <a href="reminders.html" class="sidebar-link">
+          <i class="fa-solid fa-bell"></i>
+          <span>Reminders Engine</span>
+        </a>
+        <a href="reports.html" class="sidebar-link active">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Reports & Analytics</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Administration</span>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-sliders"></i>
+          <span>System Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Super Admin</div>
+          <div class="sidebar-user-role">Platform Executive</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Executive Business Intelligence & Reports</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#2E7D32;">AD</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">Super Admin</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Platform Root</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-sliders me-2 text-primary"></i>System Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h3 class="fw-bold text-dark mb-1">Executive Reports Center</h3>
+            <p class="text-secondary small mb-0">Cross-platform revenue breakdowns, garage performance comparisons, and client retention trends.</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+              <i class="fa-solid fa-print me-1"></i> Print Report
+            </button>
+            <button class="btn btn-primary btn-sm" onclick="AutoCareApp.exportTableToCSV('admin-report-table', 'AutoCare_Executive_Report.csv')">
+              <i class="fa-solid fa-download me-1"></i> Export CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="card-custom mb-4 p-3">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-3">
+              <label class="form-label small mb-1">Report Period</label>
+              <select class="form-select form-select-sm">
+                <option value="ytd" selected>Year-to-Date (2026)</option>
+                <option value="last30">Last 30 Days</option>
+                <option value="q2">Q2 2026</option>
+                <option value="q1">Q1 2026</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label small mb-1">Partner Garage Scope</label>
+              <select class="form-select form-select-sm">
+                <option value="all" selected>All 85 Registered Garages</option>
+                <option value="top10">Top 10 High Volume Workshops</option>
+                <option value="mumbai">Mumbai Region Only</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label small mb-1">Service Classification</label>
+              <select class="form-select form-select-sm">
+                <option value="all" selected>All Categories</option>
+                <option value="general">General & Periodic Services</option>
+                <option value="repairs">Mechanical & Engine Repairs</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label small mb-1">&nbsp;</label>
+              <button class="btn btn-dark-navy btn-sm w-100" onclick="AutoCareApp.Toast.show('info', 'Filters Applied', 'Report datasets refreshed.')">
+                <i class="fa-solid fa-filter me-1"></i> Apply Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Analytics Grid -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <h5 class="fw-bold text-dark mb-3">Garage Workshop Performance (Jobs Handled)</h5>
+              <div style="height: 270px; position: relative;">
+                <canvas id="garageRankChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card-custom h-100">
+              <h5 class="fw-bold text-dark mb-3">Monthly Gross Platform GMV (₹ Lakhs)</h5>
+              <div style="height: 270px; position: relative;">
+                <canvas id="monthlyGmvChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown Table -->
+        <div class="card-custom">
+          <h5 class="fw-bold text-dark mb-3">Top Garage Workshop Performance Ledger</h5>
+          <div class="table-responsive-custom">
+            <table class="table-custom" id="admin-report-table">
+              <thead>
+                <tr>
+                  <th>Workshop Partner</th>
+                  <th>Location</th>
+                  <th class="text-center">Active Bays</th>
+                  <th class="text-center">Bookings</th>
+                  <th class="text-center">Customer Rating</th>
+                  <th class="text-end">Total Gross Revenue</th>
+                  <th class="text-end">Platform Fee (15%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>SpeedPro AutoCare Workshop</strong></td>
+                  <td>Andheri East, Mumbai</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center fw-bold text-primary">1,280</td>
+                  <td class="text-center"><span class="badge bg-success text-white">4.8 ★</span></td>
+                  <td class="text-end fw-bold text-dark">₹38,40,000</td>
+                  <td class="text-end text-success fw-bold">₹5,76,000</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Apex Auto Works & Detailing</strong></td>
+                  <td>Bandra West, Mumbai</td>
+                  <td class="text-center">8</td>
+                  <td class="text-center fw-bold text-primary">2,150</td>
+                  <td class="text-center"><span class="badge bg-success text-white">4.9 ★</span></td>
+                  <td class="text-end fw-bold text-dark">₹64,50,000</td>
+                  <td class="text-end text-success fw-bold">₹9,67,500</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Elite Wheels SuperCare</strong></td>
+                  <td>Powai, Mumbai</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center fw-bold text-primary">980</td>
+                  <td class="text-center"><span class="badge bg-success text-white">4.7 ★</span></td>
+                  <td class="text-end fw-bold text-dark">₹29,40,000</td>
+                  <td class="text-end text-success fw-bold">₹4,41,000</td>
+                </tr>
+
+                <tr>
+                  <td><strong>AutoZen Premium Hub</strong></td>
+                  <td>Lower Parel, Mumbai</td>
+                  <td class="text-center">10</td>
+                  <td class="text-center fw-bold text-primary">1,890</td>
+                  <td class="text-center"><span class="badge bg-success text-white">4.9 ★</span></td>
+                  <td class="text-end fw-bold text-dark">₹56,70,000</td>
+                  <td class="text-end text-success fw-bold">₹8,50,500</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Business Intelligence Suite</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Garage Rank Chart
+      new Chart(document.getElementById('garageRankChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Apex Auto', 'AutoZen Hub', 'SpeedPro Care', 'Elite Wheels', 'Prime Motors'],
+          datasets: [{
+            label: 'Total Completed Services',
+            data: [2150, 1890, 1280, 980, 750],
+            backgroundColor: '#1565C0',
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+
+      // Monthly GMV Chart
+      new Chart(document.getElementById('monthlyGmvChart'), {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+          datasets: [{
+            label: 'GMV (₹ Lakhs)',
+            data: [4.8, 5.5, 6.2, 7.1, 7.8, 8.0, 8.2, 8.5],
+            borderColor: '#2E7D32',
+            backgroundColor: 'rgba(46, 125, 50, 0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 4,
+            pointBackgroundColor: '#2E7D32'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: {
+              ticks: { callback: v => '₹' + v + 'L' }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
