@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Bookings – AutoCare Garage</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-garage-badge">Garage Staff</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Workshop Operations</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="bookings.html" class="sidebar-link active">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Service Bookings</span>
+          <span class="menu-badge bg-primary" data-vehicle-count>0</span>
+        </a>
+        <a href="service-jobs.html" class="sidebar-link">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>Service Jobs (Kanban)</span>
+        </a>
+        <a href="customers.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Customers</span>
+        </a>
+        <a href="staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicles</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Financials & Capacity</span>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Generator</span>
+        </a>
+        <a href="slots.html" class="sidebar-link">
+          <i class="fa-solid fa-table-cells"></i>
+          <span>Available Slots</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Settings</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-id-card"></i>
+          <span>Workshop Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">SpeedPro Staff</div>
+          <div class="sidebar-user-role">Workshop Manager</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Service Bookings Management</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">SpeedPro Garage</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Workshop Staff</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-solid fa-id-card me-2 text-primary"></i>Garage Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h3 class="fw-bold text-dark mb-1">Workshop Bookings Ledger</h3>
+            <p class="text-secondary small mb-0">Review incoming appointment requests, allocate mechanics, and update stage statuses.</p>
+          </div>
+          <button class="btn btn-outline-primary btn-sm" onclick="AutoCareApp.exportTableToCSV('garage-bookings-table', 'Garage_Bookings.csv')">
+            <i class="fa-solid fa-download me-1"></i> Export Bookings CSV
+          </button>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="card-custom mb-4 p-3">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-4">
+              <label class="form-label small mb-1">Filter by Status</label>
+              <select class="form-select form-select-sm" id="booking-filter-status">
+                <option value="all">All Bookings</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="vehicle-received">Vehicle Received</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div class="col-md-8">
+              <label class="form-label small mb-1">Search Customer, Vehicle, or Booking ID</label>
+              <input type="text" class="form-control form-control-sm" id="booking-search-input" placeholder="Type name, vehicle plate, or BK-XXXX...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookings Table -->
+        <div class="card-custom">
+          <div class="table-responsive-custom">
+            <table class="table-custom" id="garage-bookings-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Service Package</th>
+                  <th>Date</th>
+                  <th>Slot Time</th>
+                  <th>Assigned Tech</th>
+                  <th>Status</th>
+                  <th class="no-export">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="garage-bookings-tbody">
+                <!-- Rendered dynamically by garage.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Booking Operations Center</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/garage.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AutoCareGarage.initBookingsPage();
+    });
+  </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try { document.querySelectorAll('[data-vehicle-count]').forEach(el => el.textContent = String(AutoCareData.getVehicles().length)); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

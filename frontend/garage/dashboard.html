@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garage Staff Dashboard – AutoCare</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-garage-badge">Garage Staff</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Workshop Operations</span>
+        <a href="dashboard.html" class="sidebar-link active">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="bookings.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Service Bookings</span>
+          <span class="menu-badge bg-primary" data-vehicle-count>0</span>
+        </a>
+        <a href="service-jobs.html" class="sidebar-link">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>Service Jobs (Kanban)</span>
+        </a>
+        <a href="customers.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Customers</span>
+        </a>
+        <a href="staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicles</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Financials & Capacity</span>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Generator</span>
+        </a>
+        <a href="slots.html" class="sidebar-link">
+          <i class="fa-solid fa-table-cells"></i>
+          <span>Available Slots</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Settings</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-id-card"></i>
+          <span>Workshop Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="garage-sidebar-name">Garage Owner</div>
+          <div class="sidebar-user-role" id="garage-sidebar-role">Workshop Owner</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Garage Workshop Operations</h1>
+        </div>
+
+        <div class="topbar-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="form-control" placeholder="Search job ID, reg plate, client...">
+        </div>
+
+        <div class="topbar-right">
+          <div class="dropdown">
+            <div class="topbar-action-btn" data-bs-toggle="dropdown">
+              <i class="fa-regular fa-bell"></i>
+              <span class="notification-badge">3</span>
+            </div>
+            <div class="dropdown-menu dropdown-menu-end shadow-lg p-0" id="topbar-notifications" style="width: 320px; border-radius: 12px;"></div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1" id="garage-header-name">My Garage</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Workshop Staff</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-solid fa-id-card me-2 text-primary"></i>Garage Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <!-- Greeting Banner -->
+        <div class="dashboard-welcome-banner" style="background: linear-gradient(135deg, #0D1B2A 0%, #1565C0 100%);">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <h2 class="welcome-title" id="garage-welcome-title">Welcome to your Garage Dashboard 👋</h2>
+              <p class="welcome-subtitle">Manage your workshop efficiently, track active bay service jobs, and generate digital invoices.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <a href="invoices.html" class="btn btn-light text-primary fw-bold">
+                <i class="fa-solid fa-plus me-1"></i> New Tax Invoice
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Today's Bookings</span>
+                <span class="stat-card-value" id="stat-today-bookings">0</span>
+                <span class="stat-card-trend trend-neutral">Bookings assigned to your garage</span>
+              </div>
+              <div class="stat-card-icon icon-blue">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Pending Services</span>
+                <span class="stat-card-value" id="stat-pending-services">0</span>
+                <span class="stat-card-trend trend-neutral">Awaiting completion</span>
+              </div>
+              <div class="stat-card-icon icon-yellow">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Completed Services</span>
+                <span class="stat-card-value" id="stat-completed-services">0</span>
+                <span class="stat-card-trend trend-neutral">Completed bookings</span>
+              </div>
+              <div class="stat-card-icon icon-green">
+                <i class="fa-solid fa-car-on"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-card-info">
+                <span class="stat-card-title">Today's Revenue</span>
+                <span class="stat-card-value" id="stat-today-revenue">₹0</span>
+                <span class="stat-card-trend trend-neutral">Revenue from completed jobs</span>
+              </div>
+              <div class="stat-card-icon icon-navy">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Workshop Revenue Chart -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-12">
+            <div class="card-custom h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h5 class="fw-bold text-dark mb-0">Workshop Daily Revenue Trend</h5>
+                  <small class="text-secondary">Gross service and parts earnings across current week</small>
+                </div>
+                <span class="badge bg-light text-primary border">This Week (₹ Lakhs)</span>
+              </div>
+              <div style="height: 270px; position: relative;">
+                <canvas id="garageRevenueChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Today's Schedule Table -->
+        <div class="card-custom">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-dark mb-0">Today's Appointment Schedule</h5>
+              <small class="text-secondary">Live service bookings allocated for today's workshop shifts</small>
+            </div>
+            <a href="bookings.html" class="btn btn-secondary-custom btn-sm">
+              Manage All Bookings
+            </a>
+          </div>
+
+          <div class="table-responsive-custom">
+            <table class="table-custom">
+              <thead>
+                <tr>
+                  <th>Time Slot</th>
+                  <th>Vehicle</th>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Technician</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="today-schedule-tbody">
+                <!-- Rendered by garage.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Workshop Operations Portal</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/garage.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AutoCareGarage.initDashboard();
+    });
+  </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try { document.querySelectorAll('[data-vehicle-count]').forEach(el => el.textContent = String(AutoCareData.getVehicles().length)); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

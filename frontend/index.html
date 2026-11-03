@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoCare | Smart Vehicle Service Management</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1769db;
+            --dark: #101b2d;
+            --light: #f5f8fc;
+            --text: #526174;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .brand-icon {
+            width: 43px;
+            height: 43px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+        }
+
+        .nav-link {
+            color: #334155 !important;
+            font-weight: 600;
+            margin: 0 8px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            padding: 11px 23px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #1055b6;
+            border-color: #1055b6;
+        }
+
+        /* Hero */
+
+        .hero {
+            background: linear-gradient(120deg, #101b2d, #153e75);
+            color: white;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 9px 16px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            color: #b8d9ff;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 57px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            color: #d4deeb;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 590px;
+        }
+
+        .hero-image {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 145px;
+            color: #8fc4ff;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 45px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats h3 {
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .hero-stats p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Common Sections */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading span {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            font-weight: 800;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: var(--text);
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* About */
+
+        .about-section {
+            background: white;
+        }
+
+        .about-icon {
+            background: #eaf2ff;
+            color: var(--primary);
+            width: 65px;
+            height: 65px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--text);
+            line-height: 1.9;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .about-list i {
+            color: #16a34a;
+            margin-right: 10px;
+        }
+
+        /* Features */
+
+        .features-section {
+            background: var(--light);
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e8edf5;
+            border-radius: 15px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            border-color: #c5dcff;
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            background: #eaf2ff;
+            color: var(--primary);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            margin-bottom: 22px;
+        }
+
+        .feature-card h5 {
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* How it works */
+
+        .step-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .step-number {
+            width: 65px;
+            height: 65px;
+            margin: auto auto 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .step-card p {
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            background: linear-gradient(120deg, #1769db, #10458f);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .cta-section h2 {
+            font-weight: 800;
+            font-size: 34px;
+        }
+
+        .cta-section p {
+            color: #e0ecff;
+            margin: 15px auto 25px;
+            max-width: 600px;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 13px 28px;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #101b2d;
+            color: white;
+            padding: 65px 0 20px;
+        }
+
+        footer h5,
+        footer h6 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #60a5fa;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            margin-top: 40px;
+            padding-top: 22px;
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .footer-contact i {
+            color: #60a5fa;
+            width: 23px;
+        }
+
+        /* Responsive */
+
+        @media(max-width: 991px) {
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-image {
+                margin-top: 20px;
+            }
+
+            .navbar-nav {
+                padding: 15px 0;
+            }
+        }
+
+        @media(max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .hero-image i {
+                font-size: 100px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                AutoCare
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <a href="login.html" class="btn btn-outline-primary">
+                        Login
+                    </a>
+
+                    <a href="register.html" class="btn btn-primary">
+                        Get Started
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO / HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-7">
+
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-star me-2"></i>
+                        SMART VEHICLE SERVICE PLATFORM
+                    </div>
+
+                    <h1>
+                        Your Vehicle Deserves
+                        <span style="color:#78b8ff;">Better Care.</span>
+                    </h1>
+
+                    <p>
+                        Manage your vehicle maintenance with ease.
+                        Book services, connect with trusted garages,
+                        track service progress and manage digital
+                        invoices — all in one platform.
+                    </p>
+
+                    <div class="d-flex gap-3 flex-wrap mt-4">
+
+                        <a href="register.html" class="btn btn-primary btn-lg">
+                            Get Started
+                            <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+
+                        <a href="#about" class="btn btn-outline-light btn-lg">
+                            Explore More
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <h3>Easy</h3>
+                            <p>Service Booking</p>
+                        </div>
+
+                        <div>
+                            <h3>Smart</h3>
+                            <p>Vehicle Management</p>
+                        </div>
+
+                        <div>
+                            <h3>Secure</h3>
+                            <p>Digital Payments</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-image">
+                        <img src="assets/img/car-service.jpg" alt="Car Service" class="hero-car-img">
+                    </div>
+                </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5">
+
+                    <div class="about-icon">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+
+                    <h2 class="fw-bold mb-3">
+                        About AutoCare
+                    </h2>
+
+                    <p>
+                        AutoCare is a smart vehicle service and
+                        maintenance management platform designed
+                        to simplify the complete vehicle servicing
+                        experience.
+                    </p>
+
+                    <p>
+                        It connects vehicle owners, garages and
+                        administrators through one centralized
+                        digital system.
+                    </p>
+
+                    <a href="register.html" class="btn btn-primary mt-3">
+                        Join AutoCare
+                        <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-7">
+
+                    <h4 class="fw-bold mb-4">
+                        Why Choose AutoCare?
+                    </h4>
+
+                    <ul class="about-list">
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Easy and convenient vehicle service booking.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Manage multiple vehicles from one account.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Track service status and maintenance progress.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Receive digital invoices and payment updates.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Connect vehicle owners with garages.
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Centralized management for administrators.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features-section" id="features">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Our Features</span>
+
+                <h2>Everything You Need</h2>
+
+                <p>
+                    Powerful features to make vehicle service
+                    management simple, efficient and convenient.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <h5>Online Service Booking</h5>
+
+                        <p>
+                            Book vehicle maintenance services
+                            by selecting your vehicle, garage,
+                            service package and preferred date.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+
+                        <h5>Vehicle Management</h5>
+
+                        <p>
+                            Add and manage multiple vehicles
+                            and maintain all important vehicle
+                            information in one place.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <h5>Live Service Tracking</h5>
+
+                        <p>
+                            Monitor service progress and
+                            stay updated about every important
+                            maintenance milestone.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+
+                        <h5>Digital Invoices</h5>
+
+                        <p>
+                            Generate and access detailed
+                            digital invoices with service
+                            charges and tax calculations.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+
+                        <h5>Online Payments</h5>
+
+                        <p>
+                            Convenient payment options
+                            with payment status updates
+                            and transaction tracking.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+
+                        <h5>Smart Notifications</h5>
+
+                        <p>
+                            Stay informed about bookings,
+                            service updates, invoices
+                            and vehicle maintenance.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how-it-works">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>Simple Process</span>
+
+                <h2>How AutoCare Works</h2>
+
+                <p>
+                    Get your vehicle serviced in just a few
+                    simple steps.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="step-card">
+
+                        <div class="step-number">01</div>
+
+                        <h5 class="fw-bold">Create Account</h5>
+
+                        <p>
+                            Register and access your
+                            vehicle owner account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="step-card">
+
+                        <div class="step-number">02</div>
+
+                        <h5 class="fw-bold">Book Service</h5>
+
+                        <p>
+                            Select your vehicle, service
+                            and preferred garage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="step-card">
+
+                        <div class="step-number">03</div>
+
+                        <h5 class="fw-bold">Track Progress</h5>
+
+                        <p>
+                            Follow your vehicle's service
+                            progress through your dashboard.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="step-card">
+
+                        <div class="step-number">04</div>
+
+                        <h5 class="fw-bold">Pay & Complete</h5>
+
+                        <p>
+                            View your invoice, complete
+                            payment and access service details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <h2>Ready to Experience Smarter Vehicle Care?</h2>
+
+            <p>
+                Join AutoCare today and simplify your vehicle
+                service and maintenance experience.
+            </p>
+
+            <a href="register.html" class="btn btn-lg">
+                Create Your Account
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <!-- Brand -->
+
+                <div class="col-lg-4">
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+
+                        <div class="brand-icon">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+
+                        <h4 class="text-white fw-bold mb-0">
+                            AutoCare
+                        </h4>
+
+                    </div>
+
+                    <p>
+                        Smart Vehicle Service & Maintenance
+                        Management Platform.
+
+                        Connecting vehicle owners, garages
+                        and administrators through a
+                        centralized digital platform.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h6>Quick Links</h6>
+
+                    <a href="#home">Home</a><br>
+                    <a href="#about">About Us</a><br>
+                    <a href="#features">Features</a><br>
+                    <a href="#how-it-works">How It Works</a><br>
+
+                </div>
+
+
+                <!-- Account -->
+
+                <div class="col-6 col-lg-2">
+
+                    <h6>Account</h6>
+
+                    <a href="login.html">Login</a><br>
+                    <a href="register.html">Register</a><br>
+                    <a href="owner/dashboard.html">Owner Portal</a><br>
+                    <a href="owner/book-service.html">Book Service</a><br>
+
+                </div>
+
+
+                <!-- Contact -->
+
+                <div class="col-lg-4">
+
+                    <h6>Contact & Support</h6>
+
+                    <p class="footer-contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        support@autocare.com
+                    </p>
+
+                    <p class="footer-contact">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 022 2850-9900
+                    </p>
+
+                    <p class="footer-contact">
+                        <i class="fa-solid fa-clock"></i>
+                        Monday - Saturday
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Copyright -->
+
+            <div class="footer-bottom">
+
+                <div class="row align-items-center">
+
+                    <div class="col-md-6 text-center text-md-start">
+
+                        &copy; 2026 AutoCare.
+                        All Rights Reserved.
+
+                    </div>
+
+                    <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+
+                        Smart Vehicle Service Management.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

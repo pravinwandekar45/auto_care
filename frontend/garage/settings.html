@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Settings – AutoCare Garage</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Design System & Dashboard CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">AutoCare</span>
+          <span class="sidebar-role-badge role-garage-badge">Garage Staff</span>
+        </div>
+      </a>
+
+      <div class="sidebar-menu">
+        <span class="sidebar-heading">Workshop Operations</span>
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="bookings.html" class="sidebar-link">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Service Bookings</span>
+          <span class="menu-badge bg-primary" data-vehicle-count>0</span>
+        </a>
+        <a href="service-jobs.html" class="sidebar-link">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>Service Jobs (Kanban)</span>
+        </a>
+        <a href="customers.html" class="sidebar-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Customers</span>
+        </a>
+        <a href="staff.html" class="sidebar-link">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Garage Staff</span>
+        </a>
+        <a href="vehicles.html" class="sidebar-link">
+          <i class="fa-solid fa-car"></i>
+          <span>Vehicles</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Financials & Capacity</span>
+        <a href="invoices.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Invoice Generator</span>
+        </a>
+        <a href="slots.html" class="sidebar-link">
+          <i class="fa-solid fa-table-cells"></i>
+          <span>Available Slots</span>
+        </a>
+
+        <span class="sidebar-heading mt-3">Settings</span>
+        <a href="profile.html" class="sidebar-link">
+          <i class="fa-solid fa-id-card"></i>
+          <span>Workshop Profile</span>
+        </a>
+        <a href="settings.html" class="sidebar-link active">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="sidebar-link text-danger-emphasis">
+          <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">SpeedPro Staff</div>
+          <div class="sidebar-user-role">Workshop Manager</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="topbar-page-title">Workshop Automation Settings</h1>
+        </div>
+
+        <div class="topbar-right ms-auto">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
+              <div class="user-avatar-sm" style="background:#C67D00;">GS</div>
+              <div class="d-none d-md-block text-start">
+                <div class="fw-semibold small text-dark lh-1">SpeedPro Garage</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Workshop Staff</small>
+              </div>
+              <i class="fa-solid fa-chevron-down text-muted small ms-1"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="profile.html"><i class="fa-solid fa-id-card me-2 text-primary"></i>Garage Profile</a></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="fa-solid fa-gear me-2 text-secondary"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="../login.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Content Area -->
+      <main class="app-content">
+        <div class="mb-4">
+          <h3 class="fw-bold text-dark mb-1">Workshop Rules & Integrations</h3>
+          <p class="text-secondary small mb-0">Configure auto-booking confirmations, customer alerts, and tax invoice terms.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-robot text-primary me-2"></i>Workflow Automation</h5>
+              
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Auto-Confirm Booking Requests</h6>
+                  <small class="text-muted">Automatically confirm slot bookings if bay capacity is below 80%.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Customer SMS Notifications on Job Move</h6>
+                  <small class="text-muted">Send text message when vehicle stage moves to 'Vehicle Received' or 'Completed'.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="fw-semibold text-dark mb-0">Low Parts Inventory Warning</h6>
+                  <small class="text-muted">Alert workshop manager when synthetic oil or filter stock drops under 5 units.</small>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-custom">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-receipt text-primary me-2"></i>Invoice Default Terms</h5>
+              <div class="mb-3">
+                <label class="form-label">Default GST Rate</label>
+                <select class="form-select">
+                  <option value="18" selected>18% GST (Standard Automobile)</option>
+                  <option value="28">28% GST (Luxury / Specialized)</option>
+                  <option value="12">12% GST (Consumables)</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Invoice Footer Disclaimer Text</label>
+                <textarea class="form-control" rows="2">Thank you for choosing AutoCare! All genuine spare parts carry 6 months / 10,000 km workshop warranty.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card-custom mb-4">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-wrench text-primary me-2"></i>Bay Capacity Limits</h5>
+              <div class="mb-3">
+                <label class="form-label">Max Concurrent Vehicles in Bays</label>
+                <input type="number" class="form-control" value="6" min="1" max="20">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Default Slot Buffer Time (Minutes)</label>
+                <input type="number" class="form-control" value="15" step="5">
+              </div>
+            </div>
+
+            <div class="card-custom">
+              <h5 class="fw-bold text-dark border-bottom pb-3 mb-3"><i class="fa-solid fa-code text-primary me-2"></i>Backend API Simulation</h5>
+              <p class="small text-secondary mb-3">
+                The frontend is architected to plug seamlessly into PHP 8 REST endpoints, MySQL tables, and Payment Gateways (Razorpay/Stripe sandbox).
+              </p>
+              <div class="p-3 bg-light rounded-3 font-monospace small border">
+                <div>API Base URL: <code>/api/v1/garage/</code></div>
+                <div>Status: <span class="text-success fw-bold">Ready for Backend Hook</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div>&copy; 2026 AutoCare – Smart Vehicle Service & Maintenance Management</div>
+        <div class="text-muted">Workshop Automation Engine</div>
+      </footer>
+    </div>
+  </div>
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try { document.querySelectorAll('[data-vehicle-count]').forEach(el => el.textContent = String(AutoCareData.getVehicles().length)); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
