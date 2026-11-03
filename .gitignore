@@ -1,2 +1,6 @@
 /backend/.env
-/backend/config/mail.local.php
+
+.env
+.env.*
+!.env.example
+backend/.env
